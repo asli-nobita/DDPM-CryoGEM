@@ -36,17 +36,18 @@ Extract all files into `testing/data/`
 2. I used Google Colab when working, hence by default the drive is mounted. Change all directory paths accordingly.
 3. **All checkpoints are saved in `checkpoints/` directory. Inside are two folders - one where I used linear beta scheduling for the noise generation, and the other where I used cosine beta scheduling. Each directory has its own set of checkpoints and generated images.**
 4. The `testing/` directory contains the dataset (`data/`) as well as all the code for the project:
+<!-- prettier-ignore-start -->
+  -   `DDPM_model.py` - describes the architecture of the DDPM model. This was sourced from [https://github.com/AAleka/retree](https://github.com/AAleka/retree). I did not alter their implementation.
+  -   `train_ddpm.py` - script for training the DDPM. This script also defines the noise scheduler for the DDPM. It creates a loss vs epoch curve, and saves the best checkpoint as well as saving checkpoints every 10 epochs. The hyperparameters `num_epochs` and `learning_rate` can be passed as command line arguments.
+  -   `evaluate_fid.py` - script that aims to evaluate FID between the real set of images and the generated dataset. It extracts features using the InceptionV3 model, generates a set of 100 images, and calculates FID using the formula
 
--   `DDPM_model.py` - describes the architecture of the DDPM model. This was sourced from [https://github.com/AAleka/retree](https://github.com/AAleka/retree). I did not alter their implementation.
--   `train_ddpm.py` - script for training the DDPM. This script also defines the noise scheduler for the DDPM. It creates a loss vs epoch curve, and saves the best checkpoint as well as saving checkpoints every 10 epochs. The hyperparameters `num_epochs` and `learning_rate` can be passed as command line arguments.
--   `evaluate_fid.py` - script that aims to evaluate FID between the real set of images and the generated dataset. It extracts features using the InceptionV3 model, generates a set of 100 images, and calculates FID using the formula
+  \[
+  FID = ||\mu_r - \mu_g||^2 + Tr(\Sigma_r + \Sigma_g - 2(\Sigma_r \Sigma_g)^{1/2})
+  \]
 
-\[
-FID = ||\mu_r - \mu_g||^2 + Tr(\Sigma_r + \Sigma_g - 2(\Sigma_r \Sigma_g)^{1/2})
-\]
+  Afterwards, I tried taking a different approach by generating the images first and then calculating FID using the library function `pytorch_fid`.
 
-Afterwards, I tried taking a different approach by generating the images first and then calculating FID using the library function `pytorch_fid`.
-
--   `generate_images.py` - script that generates a given number of synthetic images. This number is passed as a command line argument.
--   `grid_search.py` - script that determines the ideal set of hyperparameters, `num_epochs` and `learning_rate` out of a given set of 9 values.
--   `visualize_comparison.py` - script that creates a side-by-side visualization of real and generated images, picking 10 random samples from both.
+  -   `generate_images.py` - script that generates a given number of synthetic images. This number is passed as a command line argument.
+  -   `grid_search.py` - script that determines the ideal set of hyperparameters, `num_epochs` and `learning_rate` out of a given set of 9 values.
+  -   `visualize_comparison.py` - script that creates a side-by-side visualization of real and generated images, picking 10 random samples from both.
+<!-- prettier-ignore-end -->
