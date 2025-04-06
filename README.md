@@ -40,7 +40,7 @@ Extract all files into `testing/data/`
   -   `DDPM_model.py` - describes the architecture of the DDPM model. This was sourced from [https://github.com/AAleka/retree](https://github.com/AAleka/retree). I did not alter their implementation.
   -   `train_ddpm.py` - script for training the DDPM. This script also defines the noise scheduler for the DDPM. It creates a loss vs epoch curve, and saves the best checkpoint as well as saving checkpoints every 10 epochs. The hyperparameters `num_epochs` and `learning_rate` can be passed as command line arguments.
   -   `evaluate_fid.py` - script that aims to evaluate FID between the real set of images and the generated dataset. It extracts features using the InceptionV3 model, generates a set of 100 images, and calculates FID using the formula  
-  ![](https://latex.codecogs.com/png.image?\dpi{110}$$FID=||\mu_1-\mu_2||^2&plus;\text{Tr}(\Sigma_1&plus;\Sigma_2-2(\Sigma_1\Sigma_2)^{1/2})$$)
+  -> ![](https://latex.codecogs.com/svg.image?\bg{white}$$FID=||\mu_1-\mu_2||^2&plus;\text{Tr}(\Sigma_1&plus;\Sigma_2-2(\Sigma_1\Sigma_2)^{1/2})$$) <-  
   Afterwards, I tried taking a different approach by generating the images first and then calculating FID using the library function `pytorch_fid`.
 
   -   `generate_images.py` - script that generates a given number of synthetic images. This number is passed as a command line argument.
