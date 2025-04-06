@@ -39,6 +39,7 @@ dependencies = [
     "mrcfile",
     "starfile",
     "cryodrgn",
+    "einops"
 
 ]
 
