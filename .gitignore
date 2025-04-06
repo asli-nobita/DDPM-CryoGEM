@@ -160,9 +160,7 @@ cython_debug/
 #.idea/
 
 dataset/
-checkpoints/
 build/
-testing/checkpoints/
 testing/data/*
 save_images/
 .history/
