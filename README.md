@@ -6,8 +6,11 @@ This project aims to generate a synthetic dataset by training a Denoising Diffus
 
 ### Installation
 
-1. Clone repo  
-   `git clone https://github.com/asli-nobita/DDPM-CryoGEM.git`
+1. Clone repo
+
+```bash
+git clone https://github.com/asli-nobita/DDPM-CryoGEM.git
+```
 
 2. (Optional) Create conda environment
 
@@ -16,8 +19,11 @@ conda create -n cryogem python=3.11
 conda activate cryogem
 ```
 
-3. Install all dependencies (make sure you are in the root directory)  
-   `pip install -e .`
+3. Install all dependencies (make sure you are in the root directory)
+
+```bash
+pip install -e .
+```
 
 ## Dataset
 
