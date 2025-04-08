@@ -163,4 +163,6 @@ dataset/
 build/
 testing/data/*
 save_images/
-.history/
+.history/ 
+testing/data/ 
+versions.txt

@@ -29,10 +29,10 @@ class CryoGEMDataset(Dataset):
         if self.transform:
             image = self.transform(image)
             
-        # Create a dummy mask (all ones) since the model expects 4 channels
+        # a dummy mask (all ones) since the model expects 4 channels
         mask = torch.ones_like(image)
         
-        # Combine image and mask
+        # combine image and mask
         combined = torch.cat([image, mask], dim=0)
         
         return combined
@@ -49,15 +49,12 @@ def get_data_loader(root_dir, batch_size=32, shuffle=True, num_workers=4):
     return dataloader
 
 if __name__ == "__main__":
-    # Test the dataset
     dataset = CryoGEMDataset("testing/data/Ribosome(10028)/real_data")
     print(f"Dataset size: {len(dataset)}")
     
-    # Get a sample
     sample = dataset[0]
     print(f"Sample shape: {sample.shape}")  # Should be [2, 128, 128] (image + mask)
     
-    # Test the dataloader
     dataloader = get_data_loader("testing/data/Ribosome(10028)/real_data", batch_size=4)
     for batch in dataloader:
         print(f"Batch shape: {batch.shape}")  # Should be [4, 2, 128, 128]

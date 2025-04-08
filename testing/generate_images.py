@@ -24,15 +24,15 @@ def generate_images(model, scheduler, num_images, device, image_size=128):
 
     with torch.no_grad():
         for _ in tqdm(range(num_images), desc="Generating images"):
-            # Start with random noise
+            # starts with random noise
             x = torch.randn(1, 2, image_size, image_size).to(device)
             
-            # Reverse diffusion process
+            # reverse diffusion process
             for t in reversed(range(T)):
                 t_batch = torch.full((1,), t, device=device, dtype=torch.long)
                 x = scheduler.p_sample(model, x, t_batch)
             
-            # Process the generated image
+            # process the generated image
             img = x[0, 0].cpu().numpy()  # Take only the image channel
             img = (img + 1) / 2  # Scale from [-1, 1] to [0, 1]
             img = (img * 255).clip(0, 255).astype(np.uint8)
@@ -44,13 +44,11 @@ def generate_images(model, scheduler, num_images, device, image_size=128):
     return images
 
 def main():
-    # Set up argument parser
     parser = argparse.ArgumentParser(description='Generate images using trained DDPM model')
     parser.add_argument('--num_images', type=int, default=100,
                       help='Number of images to generate (default: 100)')
     args = parser.parse_args()
     
-    # Set up device
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
     
@@ -84,16 +82,12 @@ def main():
         drop_rate=0.
     ).to(device)
     
-    # Load model weights
     model.load_state_dict(checkpoint['model_state_dict'])
     
-    # Initialize scheduler
     scheduler = NoiseScheduler(num_timesteps=1000, schedule_type=schedule_type, device=device)
     
-    # Generate images
     generated_images = generate_images(model, scheduler, args.num_images, device)
     
-    # Save images
     save_dir = os.path.join(checkpoints_dir, scheduling_dir, "generated_images")
     os.makedirs(save_dir, exist_ok=True)
     

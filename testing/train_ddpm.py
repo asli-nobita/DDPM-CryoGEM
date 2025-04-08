@@ -95,12 +95,12 @@ class NoiseScheduler:
             # Predict noise
             predicted_noise = model(x_t, t)
             
-            # Calculate parameters for reverse process
+            # parameters for reverse process
             alpha = self.alphas[t]
             alpha_cumprod = self.alphas_cumprod[t]
             beta = self.betas[t]
             
-            # Calculate mean for reverse distribution
+            # mean for reverse distribution
             x_0_predicted = (x_t - torch.sqrt(1 - alpha_cumprod) * predicted_noise) / torch.sqrt(alpha_cumprod)
             x_0_predicted = torch.clamp(x_0_predicted, -1, 1)
             
@@ -109,7 +109,7 @@ class NoiseScheduler:
                 (beta * x_0_predicted / torch.sqrt(alpha))
             )
             
-            # Add variance
+            # adding variance
             if t > 0:
                 noise = torch.randn_like(x_t)
                 variance = torch.sqrt(beta) * noise
@@ -141,13 +141,11 @@ def train_ddpm(
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
     criterion = nn.MSELoss()
     
-    # Initialize noise scheduler
     scheduler = NoiseScheduler(device=device, schedule_type=schedule_type)
     
     # Get save directory based on schedule type
     save_dir = get_save_dir(schedule_type)
     
-    # Create save directory if it doesn't exist
     os.makedirs(save_dir, exist_ok=True)
     
     print(f"Starting training on device: {device}")
@@ -174,16 +172,14 @@ def train_ddpm(
             # Sample random timesteps
             t = torch.randint(0, scheduler.num_timesteps, (batch_size,), device=device).long()
             
-            # Forward diffusion process
+            # the forward diffusion process
             x_t, noise = scheduler.q_sample(batch[:, :1], t)  # Only add noise to image channel
             
             # Create input tensor with proper channels
             model_input = torch.cat([x_t, batch[:, 1:]], dim=1)
             
-            # Predict noise
             predicted_noise = model(model_input, t)
             
-            # Calculate loss
             loss = criterion(predicted_noise, noise)
             
             optimizer.zero_grad()
@@ -197,10 +193,8 @@ def train_ddpm(
         loss_history.append(avg_loss)
         print(f"Epoch {epoch+1}/{num_epochs}, Average Loss: {avg_loss:.4f}")
         
-        # Plot and save loss curve
         plot_loss_curve(loss_history, save_dir)
         
-        # Save checkpoint every 10 epochs
         if (epoch + 1) % 10 == 0:
             checkpoint_path = os.path.join(save_dir, f"ddpm_epoch_{epoch+1}.pt")
             torch.save({
@@ -230,7 +224,6 @@ def train_ddpm(
             print(f"New best model saved with loss: {best_loss:.4f}")
 
 if __name__ == "__main__":
-    # Set up argument parser
     parser = argparse.ArgumentParser(description='Train DDPM model')
     parser.add_argument('--num_epochs', type=int, default=30,
                       help='Number of training epochs (default: 30)')
@@ -249,7 +242,7 @@ if __name__ == "__main__":
     
     model = DDPM(
         time_dim=256,
-        img_channels=2,  # 1 for grayscale image + 1 for mask
+        img_channels=2,  
         dim=2 * 2048,
         depth=1,
         heads=4,
