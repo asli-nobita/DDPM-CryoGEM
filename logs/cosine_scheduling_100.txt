@@ -1,0 +1,135 @@
+Using device: cuda
+Training for 100 epochs with learning rate 0.0002
+Starting training on device: cuda
+Using cosine noise schedule
+Starting from epoch: 0
+Initial best loss: inf
+Epoch 1/100, Average Loss: 0.9400
+New best model saved with loss: 0.9400
+Epoch 2/100, Average Loss: 0.1335
+New best model saved with loss: 0.1335
+Epoch 3/100, Average Loss: 0.0949
+New best model saved with loss: 0.0949
+Epoch 4/100, Average Loss: 0.0625
+New best model saved with loss: 0.0625
+Epoch 5/100, Average Loss: 0.0632
+Epoch 6/100, Average Loss: 0.0602
+New best model saved with loss: 0.0602
+Epoch 7/100, Average Loss: 0.0559
+New best model saved with loss: 0.0559
+Epoch 8/100, Average Loss: 0.0591
+Epoch 9/100, Average Loss: 0.0576
+Epoch 10/100, Average Loss: 0.0541
+Checkpoint saved at epoch 10
+New best model saved with loss: 0.0541
+Epoch 11/100, Average Loss: 0.0476
+New best model saved with loss: 0.0476
+Epoch 12/100, Average Loss: 0.0480
+Epoch 13/100, Average Loss: 0.0441
+New best model saved with loss: 0.0441
+Epoch 14/100, Average Loss: 0.0618
+Epoch 15/100, Average Loss: 0.0523
+Epoch 16/100, Average Loss: 0.0461
+Epoch 17/100, Average Loss: 0.0509
+Epoch 18/100, Average Loss: 0.0498
+Epoch 19/100, Average Loss: 0.0454
+Epoch 20/100, Average Loss: 0.0396
+Checkpoint saved at epoch 20
+New best model saved with loss: 0.0396
+Epoch 21/100, Average Loss: 0.0402
+Epoch 22/100, Average Loss: 0.0600
+Epoch 23/100, Average Loss: 0.0455
+Epoch 24/100, Average Loss: 0.0433
+Epoch 25/100, Average Loss: 0.0482
+Epoch 26/100, Average Loss: 0.0449
+Epoch 27/100, Average Loss: 0.0461
+Epoch 28/100, Average Loss: 0.0435
+Epoch 29/100, Average Loss: 0.0411
+Epoch 30/100, Average Loss: 0.0413
+Checkpoint saved at epoch 30
+Epoch 31/100, Average Loss: 0.0404
+Epoch 32/100, Average Loss: 0.0428
+Epoch 33/100, Average Loss: 0.0391
+New best model saved with loss: 0.0391
+Epoch 34/100, Average Loss: 0.0426
+Epoch 35/100, Average Loss: 0.0384
+New best model saved with loss: 0.0384
+Epoch 36/100, Average Loss: 0.0441
+Epoch 37/100, Average Loss: 0.0389
+Epoch 38/100, Average Loss: 0.0430
+Epoch 39/100, Average Loss: 0.0505
+Epoch 40/100, Average Loss: 0.0383
+Checkpoint saved at epoch 40
+New best model saved with loss: 0.0383
+Epoch 41/100, Average Loss: 0.0408
+Epoch 42/100, Average Loss: 0.0443
+Epoch 43/100, Average Loss: 0.0481
+Epoch 44/100, Average Loss: 0.0400
+Epoch 45/100, Average Loss: 0.0424
+Epoch 46/100, Average Loss: 0.0393
+Epoch 47/100, Average Loss: 0.0443
+Epoch 48/100, Average Loss: 0.0423
+Epoch 49/100, Average Loss: 0.0457
+Epoch 50/100, Average Loss: 0.0430
+Checkpoint saved at epoch 50
+Epoch 51/100, Average Loss: 0.0446
+Epoch 52/100, Average Loss: 0.0361
+New best model saved with loss: 0.0361
+Epoch 53/100, Average Loss: 0.0399
+Epoch 54/100, Average Loss: 0.0449
+Epoch 55/100, Average Loss: 0.0364
+Epoch 56/100, Average Loss: 0.0434
+Epoch 57/100, Average Loss: 0.0457
+Epoch 58/100, Average Loss: 0.0365
+Epoch 59/100, Average Loss: 0.0477
+Epoch 60/100, Average Loss: 0.0393
+Checkpoint saved at epoch 60
+Epoch 61/100, Average Loss: 0.0401
+Epoch 62/100, Average Loss: 0.0403
+Epoch 63/100, Average Loss: 0.0404
+Epoch 64/100, Average Loss: 0.0365
+Epoch 65/100, Average Loss: 0.0459
+Epoch 66/100, Average Loss: 0.0527
+Epoch 67/100, Average Loss: 0.0440
+Epoch 68/100, Average Loss: 0.0418
+Epoch 69/100, Average Loss: 0.0417
+Epoch 70/100, Average Loss: 0.0375
+Checkpoint saved at epoch 70
+Epoch 71/100, Average Loss: 0.0470
+Epoch 72/100, Average Loss: 0.0434
+Epoch 73/100, Average Loss: 0.0382
+Epoch 74/100, Average Loss: 0.0329
+New best model saved with loss: 0.0329
+Epoch 75/100, Average Loss: 0.0407
+Epoch 76/100, Average Loss: 0.0394
+Epoch 77/100, Average Loss: 0.0459
+Epoch 78/100, Average Loss: 0.0416
+Epoch 79/100, Average Loss: 0.0355
+Epoch 80/100, Average Loss: 0.0421
+Checkpoint saved at epoch 80
+Epoch 81/100, Average Loss: 0.0368
+Epoch 82/100, Average Loss: 0.0492
+Epoch 83/100, Average Loss: 0.0396
+Epoch 84/100, Average Loss: 0.0408
+Epoch 85/100, Average Loss: 0.0384
+Epoch 86/100, Average Loss: 0.0370
+Epoch 87/100, Average Loss: 0.0464
+Epoch 88/100, Average Loss: 0.0475
+Epoch 89/100, Average Loss: 0.0379
+Epoch 90/100, Average Loss: 0.0384
+Checkpoint saved at epoch 90
+Epoch 91/100, Average Loss: 0.0375
+Epoch 92/100, Average Loss: 0.0416
+Epoch 93/100, Average Loss: 0.0406
+Epoch 94/100, Average Loss: 0.0407
+Epoch 95/100, Average Loss: 0.0396
+Epoch 96/100, Average Loss: 0.0432
+Epoch 97/100, Average Loss: 0.0490
+Epoch 98/100, Average Loss: 0.0377
+Epoch 99/100, Average Loss: 0.0435
+Epoch 100/100, Average Loss: 0.0386
+Checkpoint saved at epoch 100
+Using device: cuda
+Loaded model from epoch 73 with loss 0.0329
+Using noise schedule: cosine
+FID Score: 419.88

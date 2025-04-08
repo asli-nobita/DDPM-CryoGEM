@@ -1,0 +1,59 @@
+Using device: cuda
+Training for 30 epochs with learning rate 0.0002
+Starting training on device: cuda
+Using cosine noise schedule
+Starting from epoch: 0
+Initial best loss: inf
+Epoch 1/30, Average Loss: 0.9252
+New best model saved with loss: 0.9252
+Epoch 2/30, Average Loss: 0.1347
+New best model saved with loss: 0.1347
+Epoch 3/30, Average Loss: 0.0800
+New best model saved with loss: 0.0800
+Epoch 4/30, Average Loss: 0.0717
+New best model saved with loss: 0.0717
+Epoch 5/30, Average Loss: 0.0577
+New best model saved with loss: 0.0577
+Epoch 6/30, Average Loss: 0.0674
+Epoch 7/30, Average Loss: 0.0558
+New best model saved with loss: 0.0558
+Epoch 8/30, Average Loss: 0.0657
+Epoch 9/30, Average Loss: 0.0574
+Epoch 10/30, Average Loss: 0.0639
+Checkpoint saved at epoch 10
+Epoch 11/30, Average Loss: 0.0494
+New best model saved with loss: 0.0494
+Epoch 12/30, Average Loss: 0.0472
+New best model saved with loss: 0.0472
+Epoch 13/30, Average Loss: 0.0447
+New best model saved with loss: 0.0447
+Epoch 14/30, Average Loss: 0.0431
+New best model saved with loss: 0.0431
+Epoch 15/30, Average Loss: 0.0546
+Epoch 16/30, Average Loss: 0.0479
+Epoch 17/30, Average Loss: 0.0437
+Epoch 18/30, Average Loss: 0.0433
+Epoch 19/30, Average Loss: 0.0444
+Epoch 20/30, Average Loss: 0.0455
+Checkpoint saved at epoch 20
+Epoch 21/30, Average Loss: 0.0414
+New best model saved with loss: 0.0414
+Epoch 22/30, Average Loss: 0.0404
+New best model saved with loss: 0.0404
+Epoch 23/30, Average Loss: 0.0464
+Epoch 24/30, Average Loss: 0.0414
+Epoch 25/30, Average Loss: 0.0415
+Epoch 26/30, Average Loss: 0.0449
+Epoch 27/30, Average Loss: 0.0419
+Epoch 28/30, Average Loss: 0.0468
+Epoch 29/30, Average Loss: 0.0505
+Epoch 30/30, Average Loss: 0.0401
+Checkpoint saved at epoch 30
+New best model saved with loss: 0.0401
+Using device: cuda
+Loaded model from epoch 21 with loss 0.0198
+Using noise schedule: cosine
+Found 935 real images
+Found 100 generated images
+Comparing 100 real images with 100 generated images
+FID Score: 419.90
